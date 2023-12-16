@@ -31,9 +31,11 @@ class CityResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('country_id')
-                    ->required()
-                    ->numeric(),
+                Forms\Components\Select::make('state_id')//create state relationship for state modal
+                ->relationship(name:'state', titleAttribute:'name') //create country relationship for state modal
+                ->searchable()
+                ->preload()
+                ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
@@ -44,7 +46,7 @@ class CityResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('country_id')
+                Tables\Columns\TextColumn::make('state_id')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('name')
