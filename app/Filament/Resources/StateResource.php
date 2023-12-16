@@ -31,7 +31,7 @@ class StateResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('state_id')
+                Forms\Components\TextInput::make('country_id')
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('name')
@@ -44,7 +44,7 @@ class StateResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('state_id')
+                Tables\Columns\TextColumn::make('country_id')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('name')
