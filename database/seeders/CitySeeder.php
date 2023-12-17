@@ -13,7 +13,6 @@ class CitySeeder extends Seeder
      */
     public function run(): void
     {
-        //
         DB::table('cities')->delete();
         $cities = array(
             array('name' => "Bombuflat", 'state_id' => 1),
