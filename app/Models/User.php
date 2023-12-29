@@ -27,6 +27,7 @@ class User extends Authenticatable implements HasTenants
         'name',
         'email',
         'password',
+        'is_admin',
     ];
 
     /**
@@ -47,6 +48,7 @@ class User extends Authenticatable implements HasTenants
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'is_admin' => 'boolean',
     ];
 
     public function getTenants(Panel $panel): Collection
@@ -63,4 +65,5 @@ class User extends Authenticatable implements HasTenants
     {
         return $this->teams->contains($tenant);
     }
+
 }
